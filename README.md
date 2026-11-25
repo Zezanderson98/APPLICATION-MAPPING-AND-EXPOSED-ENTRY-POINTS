@@ -5,9 +5,13 @@
 ### Milestone 1 - Application Mapping & Surface Discovery
 
 **Assessment Type:** Black-Box Penetration Test
+
 **Target:** https://medirozahospital.com
+
 **Phase:** Application Mapping & Exposed Entry Points
+
 **Analyst:** Anderson Edaiyo Uzezi
+
 **Assessment Date:** 22 November 2026
 
 ---
