@@ -503,3 +503,7 @@ Assessment will proceed using controlled and authorized testing procedures in ac
 > **Next Phase:** Milestone 1 – Initial Access & Authentication Testing
 
 
+## 👤 Author
+**Anderson Edaiyo Uzezi**  
+Cybersecurity Professional B084  
+LinkedIn: https://www.linkedin.com/in/anderson-edaiyo-bab74117b
