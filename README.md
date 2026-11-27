@@ -337,7 +337,7 @@ SS011-STAFF-LOGIN-PORTAL
 
 
 
-SS011A-OLD-DIRECTORY.png
+SS011B-OLD-DIRECTORY.png
 
 
 <img width="1366" height="768" alt="SS011B-OLD-DIRECTORY" src="https://github.com/user-attachments/assets/603caf85-bf6e-4b5a-b164-e047d0b99222" />
@@ -588,7 +588,7 @@ Backup File Retrieved Without Authentication
 | `SS007-ROBOTS.png` | `robots.txt` disclosure of `/old/` |
 | `SS010-SITE-MAP.png` | Application mapping overview |
 | `SS012-GOBUSTER.png` | Directory enumeration validation |
-| `OLD-Directory.png` | Open directory listing exposure (`Index of /old/`) |
+| `SS011B-OLD-Directory.png` | Open directory listing exposure (`Index of /old/`) |
 
 ---
 
