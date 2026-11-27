@@ -80,7 +80,25 @@ date: Wed, 25 Nov 2026 01:51:05 GMT
 server: LiteSpeed
 x-turbo-charged-by: LiteSpeed
 ```
-* **Evidence:** `SS007-ROBOTS.png` - Screenshot 1
+* **Evidence:**
+
+
+
+SS007A-ROBOTS.png
+
+
+
+
+
+
+
+
+
+<img width="1360" height="662" alt="SS007A-ROBOTS" src="https://github.com/user-attachments/assets/dc1b89ce-8bd6-45aa-aa2c-85cba385a24f" />
+
+
+
+
 
 #### Command 2
 ```bash
@@ -97,7 +115,22 @@ Disallow: /old/
 Sitemap: https://medirozahospital.com/sitemap.xml
 ```
 
-* **Evidence:** `SS007-ROBOTS.png` - Screenshot 2
+* **Evidence:**
+
+ 
+ SS007B-ROBOTS.png
+
+
+
+
+<img width="1360" height="662" alt="SS007B-ROBOTS" src="https://github.com/user-attachments/assets/2e9b4d6a-5d8a-46a7-a29c-76799112b300" />
+
+
+
+
+
+
+
 
 #### Analyst Notes
 * The first command confirms `robots.txt` exists and is publicly accessible with `HTTP 200` (a 132-byte plain-text file served by LiteSpeed).
@@ -125,7 +158,22 @@ curl -s https://medirozahospital.com/sitemap.xml
 </urlset>
 ```
 
-* **Evidence:** `SS008-SITEMAP.png` - Screenshot 1
+* **Evidence:**
+
+ 
+ 
+ SS008A-SITEMAP.png
+
+<img width="1360" height="662" alt="SS008A-SITEMAP" src="https://github.com/user-attachments/assets/c24604f1-d443-4cf3-b4e1-41b1ad0006f0" />
+
+
+
+
+
+
+
+
+
 
 #### Command 2
 ```bash
@@ -141,7 +189,23 @@ curl -s https://medirozahospital.com/sitemap_index.xml
 <p>The resource requested could not be found on this server!</p>
 Proudly powered by LiteSpeed Web Server
 ```
-* **Evidence:** `SS008-SITEMAP.png` - Screenshot 2
+* **Evidence:**
+
+ 
+ 
+ 
+ SS008B-SITEMAP.png
+
+
+
+
+<img width="1360" height="662" alt="SS008B-SITEMAP" src="https://github.com/user-attachments/assets/0a6253cc-eb75-4617-bda2-198fc9e8d8e3" />
+
+
+
+
+
+
 
 #### Analyst Notes
 * The first command shows `sitemap.xml` lists only 4 public pages: `index.html`, `about.html`, `doctors.html`, and `contact.html`. It does **not** list login, appointment, search, or admin pages.
@@ -158,14 +222,35 @@ curl -I https://medirozahospital.com/.well-known/security.txt
 ```
 
 #### Finding
-```http
+```
+
 HTTP/2 404
 date: Wed, 25 Nov 2026 02:20:04 GMT
 server: LiteSpeed
 x-turbo-charged-by: LiteSpeed
 ```
 * **Status:** Not Present
-* **Evidence:** `SS009-SECURITYTXT.png`
+* **Evidence:**
+
+ 
+ SS009-SECURITYTXT.png
+
+http<img width="1360" height="662" alt="SS009-SECURITYTXT" src="https://github.com/user-attachments/assets/8a46f913-03e1-4f8c-8c48-bc58036e31a7" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Analyst Notes
 * The request returns `HTTP 404 Not Found`, confirming `security.txt` is **Not Present**.
@@ -189,7 +274,79 @@ All public pages were manually visited to identify user-controllable inputs.
 | 6 | Staff Login | `/staff/login.php` | Authentication |
 | 7 | Old Directory | `/old/` | Directory Listing - Exposed Backup |
 
-* **Evidence:** `SS010-SITE-MAP.png`
+* **Evidence:**
+
+SS09-HOMEPAGE.png
+
+
+
+<img width="1366" height="768" alt="SS09-HOMEPAGE" src="https://github.com/user-attachments/assets/be5252dd-312e-4545-bc20-30b7034650e4" />
+
+
+
+
+SS010-ABOUT.png
+
+
+
+
+
+
+<img width="1366" height="768" alt="SS010-ABOUT" src="https://github.com/user-attachments/assets/f2f92b64-dae8-416f-a4a2-dbe32704a054" />
+
+
+
+SS010A-DOCTORS.png
+
+<img width="1366" height="768" alt="SS011-DOCTORS" src="https://github.com/user-attachments/assets/03aa070d-2350-4c02-b924-ff1fed345f41" />
+
+
+
+
+SS010B-CONTACTS.png
+
+
+<img width="1366" height="768" alt="SS011A-CONTACT" src="https://github.com/user-attachments/assets/6c60254c-0878-49be-a346-b354ea866b8b" />
+
+
+
+
+
+
+
+SS010C-PATIENT PORTAL LOGIN.png
+
+
+
+
+
+
+
+<img width="1366" height="768" alt="SS015-PATIENT PORTAL" src="https://github.com/user-attachments/assets/6f3bfd4b-d221-461b-a8ce-6b66a0eadcdc" />
+
+
+
+
+
+SS011-STAFF-LOGIN-PORTAL
+
+<img width="1366" height="768" alt="SS014-LOGIN" src="https://github.com/user-attachments/assets/508bbf65-4870-43bd-b56c-c5188ac1787e" />
+
+
+
+
+
+
+SS011A-OLD-DIRECTORY.png
+
+
+<img width="1366" height="768" alt="SS011B-OLD-DIRECTORY" src="https://github.com/user-attachments/assets/603caf85-bf6e-4b5a-b164-e047d0b99222" />
+
+
+
+
+
+
 * **Note:** No `/login`, `/search?q=`, `/appointment`, `/upload`, or `/admin` page was found. Those template entries were removed as they were not confirmed.
 
 ---
@@ -206,7 +363,7 @@ This is the core deliverable of this phase. Every place the application accepts 
 | **E-004** | Old Directory Listing | Directory Listing | `/old/` | No input - exposes `mediroza_db_backup_2019.sql` | **CRITICAL** - Data Exposure |
 | **E-005** | `robots.txt` / `sitemap.xml` | Information Disclosure | `/robots.txt`, `/sitemap.xml` | No input | **Low** - Info Disclosure |
 
-* **Evidence:** `SS011-ENTRY-POINTS.png`
+
 
 #### Analyst Assessment
 The Login / Authentication forms at `/patient/login.php` and `/staff/login.php` were identified as the highest-value entry points. The assignment hint for Milestone 1 states:
@@ -235,7 +392,23 @@ gobuster dir -u https://medirozahospital.com -w /usr/share/wordlists/dirb/common
 | `/.htaccess`, `/.git/HEAD` | `403` | Blocked - Positive control |
 | `/admin`, `/login`, `/uploads`, `/backup` | Not Found | Not confirmed - No reliable `200` response |
 
-* **Evidence:** `SS012-GOBUSTER.png`
+* **Evidence:**
+
+ 
+ 
+ SS012-GOBUSTER.png
+
+
+
+
+
+
+
+<img width="1360" height="662" alt="SS020-GOBUSTER" src="https://github.com/user-attachments/assets/adeab516-d6e8-4efa-b6e5-1c788429e26f" />
+
+
+
+
 
 #### Analyst Notes
 * Enumeration was conducted at a low thread count (`10`) due to the detected LiteSpeed WAF.
@@ -274,7 +447,45 @@ No CMS or framework was positively identified. The application is believed to be
 | `POST` | `/staff/login.php` | Staff Login |
 | `POST` | `/contact.html` | Contact Form |
 
-* **Evidence:** `SS013-WHATWEB-FORMS.png`
+* **Evidence:**
+
+
+
+SS013-WHATWEB-FORMS.png
+
+
+
+
+
+
+
+<img width="1360" height="662" alt="SS0-WHATWEB-FORMS" src="https://github.com/user-attachments/assets/203d2efa-09a6-4da2-88ca-fa1ce54517de" />
+
+
+
+
+
+SS013A-PATIENT-FORM-HTML
+
+
+
+
+
+<img width="1366" height="768" alt="SS020-PATIENT-FORM-HTML" src="https://github.com/user-attachments/assets/b5eeea5b-6411-430a-a3f0-ff610e7ebd7f" />
+
+
+
+
+SS013B-STAFF-FORM-HTML
+
+
+<img width="1366" height="768" alt="SS019-STAFF-FORM-HTML" src="https://github.com/user-attachments/assets/492d7824-667b-4057-8a57-867613efb47b" />
+
+
+
+
+
+
 
 ---
 
@@ -376,9 +587,8 @@ Backup File Retrieved Without Authentication
 | :--- | :--- |
 | `SS007-ROBOTS.png` | `robots.txt` disclosure of `/old/` |
 | `SS010-SITE-MAP.png` | Application mapping overview |
-| `SS011-ENTRY-POINTS.png` | Entry point inventory |
 | `SS012-GOBUSTER.png` | Directory enumeration validation |
-| `OLD PAGE.png` | Open directory listing exposure (`Index of /old/`) |
+| `OLD-Directory.png` | Open directory listing exposure (`Index of /old/`) |
 
 ---
 
