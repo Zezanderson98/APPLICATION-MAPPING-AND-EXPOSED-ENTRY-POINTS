@@ -276,7 +276,7 @@ All public pages were manually visited to identify user-controllable inputs.
 
 * **Evidence:**
 
-SS09-HOMEPAGE.png
+SS09B-HOMEPAGE.png
 
 
 
